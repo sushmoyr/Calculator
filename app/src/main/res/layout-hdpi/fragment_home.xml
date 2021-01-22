@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text=""
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeMinTextSize="20sp"
+        android:fontFamily="@font/raleway_medium"
+        android:textSize="50sp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:textColor="@color/colorGray"
+        android:singleLine="true"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text=""
+        android:textSize="60sp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:textColor="@color/colorWhite"
+        android:singleLine="true"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textColor="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+
+                android:id="@+id/sine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway"
+                android:src="@drawable/sine"
+                android:text="sin"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/cosine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/cos"
+                android:stateListAnimator="@null"
+                android:textColor="@color/colorGray"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/tan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/tan"
+                android:stateListAnimator="@null"
+                android:text="%"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/log"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/log"
+                android:stateListAnimator="@null"
+                android:text="/"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/log10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/log10"
+                android:stateListAnimator="@null"
+                android:text="/"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textColor="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+
+                android:id="@+id/rootx"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway"
+                android:src="@drawable/square_root_of_x_mathematical_signs"
+                android:text="sqrt("
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/power"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/power"
+                android:stateListAnimator="@null"
+                android:text="^"
+                android:textColor="@color/colorGray"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/pi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/pi"
+                android:stateListAnimator="@null"
+                android:text="3.1416"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/openP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/ic_leftbracket"
+                android:stateListAnimator="@null"
+                android:text="3.1416"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+            <ImageButton
+
+                android:id="@+id/closeP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:src="@drawable/ic_rightbracket"
+                android:stateListAnimator="@null"
+                android:text="3.1416"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp"
+                android:tint="@color/colorPurple" />
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textColor="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnClear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway"
+                android:src="@drawable/ic_ac"
+                android:tint="@color/colorPurple"
+                android:text="C"
+                android:textColor="@color/colorPurple"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/backspace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/ic_baseline_backspace_24"
+                android:tint="@color/colorPurple"
+                android:textColor="@color/colorGray"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/mod"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/mod"
+                android:tint="@color/colorPurple"
+                android:text="%"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnDivide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/div"
+                android:tint="@color/colorPurple"
+                android:text="/"
+                android:textColor="@color/colorPurple"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway"
+                android:stateListAnimator="@null"
+                android:text="1"
+                android:src="@drawable/one"
+                android:tint="@color/white"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/two"
+                android:tint="@color/white"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:text="3"
+                android:src="@drawable/three"
+                android:tint="@color/white"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnMultiply"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/mul"
+                android:tint="@color/colorPurple"
+                android:text="*"
+                android:textColor="@color/colorPurple"
+                android:textSize="40sp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/four"
+                android:tint="@color/white"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/five"
+                android:tint="@color/white"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/six"
+                android:tint="@color/white"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/minus"
+                android:tint="@color/colorPurple"
+                android:text="-"
+                android:textColor="@color/colorPurple"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/seven"
+                android:tint="@color/white"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/eight"
+                android:tint="@color/white"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/nine"
+                android:tint="@color/white"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/plus"
+                android:tint="@color/colorPurple"
+                android:text="+"
+                android:textColor="@color/colorPurple"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn00"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/ic_rotate"
+                android:tint="@color/colorPurple"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btn0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/zero"
+                android:tint="@color/white"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnDot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorBlack"
+                android:fontFamily="@font/raleway_medium"
+                android:stateListAnimator="@null"
+                android:src="@drawable/decimal"
+                android:tint="@color/white"
+                android:text="."
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/btnEqual"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/eq"
+                    android:tint="@color/white"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/btn_equal_bg"
+                    android:fontFamily="@font/raleway_medium"
+                    android:stateListAnimator="@null"
+                    android:text="="
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
