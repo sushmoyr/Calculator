@@ -1,13 +1,20 @@
 package com.example.calculator
 
-import android.os.Debug
-import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 
 class HomeViewModel : ViewModel()
 {
-    private lateinit var outputData:String
-    private lateinit var inputData:String
+    val output : MutableLiveData<String> by lazy{
+        MutableLiveData<String>()
+    }
+    val input : MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    private  var outputData:String
+    private  var inputData:String
     init {
         outputData = ""
         inputData = ""
@@ -18,6 +25,7 @@ class HomeViewModel : ViewModel()
         {
             "clear" -> clear()
             "backspace" -> backspace()
+            "equal" -> onEqualButtonClick()
             else -> buildInput(data)
         }
     }
@@ -25,26 +33,45 @@ class HomeViewModel : ViewModel()
     private fun backspace()
     {
         inputData = inputData.dropLast(1)
-        Log.d("Backspace called", inputData)
+        updateInputData(inputData)
+    }
+
+    private fun onEqualButtonClick()
+    {
+        input.value = output.value
+        inputData = output.value.toString()
     }
 
     private fun buildInput(line:String)
     {
         inputData+=line
-        Log.d("input", inputData)
+        updateInputData(inputData)
     }
     private fun clear()
     {
         inputData = ""
-        outputData = ""
+        updateInputData(inputData)
     }
-    public fun getInputData():String
+
+    private fun evaluate():String
     {
-        return inputData
+
+        return try {
+            val ans = ExpressionBuilder(inputData).build().evaluate()
+            ans.toString()
+        }catch (e: Exception){
+            "Invalid"
+        }
     }
-    public fun getOutputData():String
+    private fun updateInputData(data : String)
     {
-        outputData = inputData.length.toString()
-        return outputData
+        input.value = data
+    }
+    fun updateOutputData()
+    {
+        if(inputData.isEmpty())
+            output.value = ""
+        else
+            output.value = evaluate()
     }
 }

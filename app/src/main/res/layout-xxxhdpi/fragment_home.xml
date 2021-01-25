@@ -15,6 +15,7 @@
         android:text=""
         android:autoSizeMaxTextSize="50sp"
         android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/raleway_medium"
         android:textSize="50sp"
         android:ellipsize="start"
@@ -29,13 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:fontFamily="@font/raleway_medium"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
         android:text=""
-        android:textSize="60sp"
-        android:ellipsize="start"
         android:gravity="end"
         android:textColor="@color/colorWhite"
-        android:singleLine="true"
-        android:paddingLeft="10dp"/>
+        android:padding="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

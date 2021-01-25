@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.calculator.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -20,6 +21,20 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         fragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
+        //setup live data
+        val valueObserver1 = Observer <String> { newValue->
+            binding.tvInput.text = newValue
+            homeViewModel.updateOutputData()
+        }
+        homeViewModel.input.observe(viewLifecycleOwner, valueObserver1)
+
+        val valueObserver2 = Observer <String> { newValue->
+            binding.tvOutput.text = newValue
+        }
+        homeViewModel.output.observe(viewLifecycleOwner, valueObserver2)
+
         setUpListeners()
         return binding.root
     }
@@ -33,122 +48,122 @@ class HomeFragment : Fragment() {
     {
         binding.backspace.setOnClickListener {
             homeViewModel.sendData("backspace")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn0.setOnClickListener {
             homeViewModel.sendData("0")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn00.setOnClickListener {
             homeViewModel.sendData("00")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn1.setOnClickListener {
             homeViewModel.sendData("1")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn2.setOnClickListener {
             homeViewModel.sendData("2")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn3.setOnClickListener {
             homeViewModel.sendData("3")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn4.setOnClickListener {
             homeViewModel.sendData("4")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn5.setOnClickListener {
             homeViewModel.sendData("5")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn6.setOnClickListener {
             homeViewModel.sendData("6")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn7.setOnClickListener {
             homeViewModel.sendData("7")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn8.setOnClickListener {
             homeViewModel.sendData("8")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btn9.setOnClickListener {
             homeViewModel.sendData("9")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnClear.setOnClickListener {
             homeViewModel.sendData("clear")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnDivide.setOnClickListener {
             homeViewModel.sendData("/")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnDot.setOnClickListener {
             homeViewModel.sendData(".")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnMinus.setOnClickListener {
             homeViewModel.sendData("-")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnMultiply.setOnClickListener {
             homeViewModel.sendData("*")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnPlus.setOnClickListener {
             homeViewModel.sendData("+")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.mod.setOnClickListener {
             homeViewModel.sendData("%")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.btnEqual.setOnClickListener {
-            binding.tvOutput.text = homeViewModel.getOutputData()
+            homeViewModel.sendData("equal")
         }
         binding.sine.setOnClickListener {
             homeViewModel.sendData("sin")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.cosine.setOnClickListener {
             homeViewModel.sendData("cos")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.tan.setOnClickListener {
             homeViewModel.sendData("tan")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.log.setOnClickListener {
             homeViewModel.sendData("log")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.log10.setOnClickListener {
-            homeViewModel.sendData("log10")
-            binding.tvInput.text = homeViewModel.getInputData()
+            homeViewModel.sendData("log10(")
+            
         }
         binding.rootx.setOnClickListener {
-            homeViewModel.sendData("root")
-            binding.tvInput.text = homeViewModel.getInputData()
+            homeViewModel.sendData("^0.5")
+            
         }
         binding.power.setOnClickListener {
             homeViewModel.sendData("^")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.pi.setOnClickListener {
             homeViewModel.sendData("3.1416")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.openP.setOnClickListener {
             homeViewModel.sendData("(")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
         binding.closeP.setOnClickListener {
             homeViewModel.sendData(")")
-            binding.tvInput.text = homeViewModel.getInputData()
+            
         }
 
 
